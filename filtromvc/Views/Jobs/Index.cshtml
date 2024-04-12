@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container mt-5" style="" id="tablas">
+    <div class="row mt-2">
+        <div class="card">
+            <div class="card-body">
+                <a asp-controller="Jobs" asp-action="Create" class="btn btn-primary mb-3">Crear
+                                    Trabajo</a>
+                                <h2>Trabajos</h2>
+                                <form id="searchForm">
+                                    <input type="text" id="searchInput" placeholder="Buscar por nombre...">
+                                    <input type="submit" value="Buscar">
+                                </form>
+                                <div id="jobList">
+
+                                </div> 
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre de la empresa</th>
+                            <th scope="col">Logo</th>
+                            <th scope="col">Oferta</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Salario</th>
+                            <th scope="col">Posicion</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Pais</th>
+                            <th scope="col">Lenguages</th>
+                            <th scope="col">Acciones</th>
+
+
+                        </tr>
+                    </thead>
+
+                        @foreach (var job in Model)
+                        {
+                                                <tr>
+                                                    <th scope="row">@job.Id</th>
+                                                    <td>@job.NameCompany</td>
+                                                    <td><img src="@job.LogoCompany" alt="@job.LogoCompany"
+                                                            style="max-width: 100px; max-height: 100px;" /></td>
+                                                    <td>@job.OfferTitle</td>
+                                                    <td>@job.Description</td>
+                                                    <td>@job.Salary</td>
+                                                    <td>@job.Positions</td>
+                                                    <td>@job.Status</td>
+                                                    <td>@job.Country</td>
+                                                    <td>@job.Languages</td>
+
+
+
+
+
+                                                    <td>
+                                                        <a asp-controller="Jobs" asp-action="Details"
+                                                            asp-route-id="@job.Id" class="btn btn-primary">Details</a>
+                                                        <a asp-controller="Jobs" asp-action="Edit"
+                                                            asp-route-id="@job.Id" class="btn btn-warning">Edit</a>
+                                                       <a asp-action="Delete" asp-route-id="@job.Id" class="btn btn-danger">Eliminar</a>
+
+                                                    </td>
+                                                </tr>
+                        }
+                </table>
+            </div>
+        </div>
+    </div>
+   </div>
+@section Scripts {
+    <script>
+        var searchUrl = '@Url.Action("Search", "Jobs")'; 
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/js/search.js"></script>
+}
+</body>
+</html>

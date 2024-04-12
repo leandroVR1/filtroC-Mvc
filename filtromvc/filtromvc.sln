@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "filtromvc", "filtromvc.csproj", "{BED71427-CC00-4A5A-8451-A5D3DF2F51BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BED71427-CC00-4A5A-8451-A5D3DF2F51BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED71427-CC00-4A5A-8451-A5D3DF2F51BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED71427-CC00-4A5A-8451-A5D3DF2F51BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED71427-CC00-4A5A-8451-A5D3DF2F51BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32F1E672-94EA-4783-AC7A-BEB4DC389635}
+	EndGlobalSection
+EndGlobal

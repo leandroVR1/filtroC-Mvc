@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container mt-5" style="" id="tablas">
+    <div class="row mt-2">
+        <div class="card">
+            <div class="card-body">
+                <a asp-controller="Employees" asp-action="Create" class="btn btn-primary mb-3">Crear
+                                    Empleo</a>
+                                <h2>Empleos</h2>
+                                 <form id="searchForm">
+                                    <input type="text" id="searchInput" placeholder="Buscar por nombre...">
+                                    <input type="submit" value="Buscar">
+                                </form>
+                                <div id="employeList">
+
+                                </div> 
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Cv</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Direccion</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Estado Civil</th>
+                            <th scope="col">Salario</th>
+                            <th scope="col">Acerca de</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Idioma</th>
+                            <th scope="col">Areas</th>
+                            <th scope="col">Acciones</th>
+
+
+                        </tr>
+                    </thead>
+
+                        @foreach (var employee in Model)
+                        {
+                                                <tr>
+                                                    <th scope="row">@employee.Id</th>
+                                                 
+                                                    <td><img src="~/images/@employee.ProfilePicture" alt="@employee.ProfilePicture"
+                                                            style="max-width: 100px; max-height: 100px;" /></td>
+                                                    <td>@employee.Names</td>
+                                                    <td>@employee.LastNames</td>
+                                                    <td>@employee.Email</td>
+                                                    <td>@employee.BirthDate</td>
+                                                    <td>@employee.Cv</td>
+                                                    <td>@employee.Gender</td>
+                                                    <td>@employee.Phone</td>
+                                                     <td>@employee.Address</td>
+                                                    <td>@employee.CivilStatus</td>
+                                                    <td>@employee.Salary</td>
+                                                    <td>@employee.About</td>
+                                                    <td>@employee.AcademicTitle</td>
+                                                    <td>@employee.Languages</td>
+                                                    <td>@employee.Areas</td>
+
+
+
+
+
+                                                    <td>
+                                                        <a asp-controller="Employees" asp-action="Details"
+                                                            asp-route-id="@employee.Id" class="btn btn-primary">Details</a>
+                                                        <a asp-controller="Employees" asp-action="Edit"
+                                                            asp-route-id="@employee.Id" class="btn btn-warning">Edit</a>
+                                                       <a asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-danger">Eliminar</a>
+
+                                                    </td>
+                                                </tr>
+                        }
+                </table>
+            </div>
+        </div>
+    </div>
+   </div>
+
+</body>
+</html>

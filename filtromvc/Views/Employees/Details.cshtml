@@ -1,0 +1,43 @@
+@model Employee
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="detallesTrabajoModalLabel">Detalles del trabajador</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                onclick="window.location.href='/Employees'"></button>
+
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-8"> 
+                    <p><strong>Logo:</strong><img src="@Model.ProfilePicture" alt="Job Logo"
+                            style="max-width: 100px; max-height: 100px;" /></p>
+                    <p><strong>Nombre:</strong>@Model.Names</p>
+                    <p><strong>Apellido:</strong>@Model.LastNames</p>
+                    <p><strong>Email:</strong>@Model.Email</p>
+                    <p><strong>Fecha de nacimiento:</strong>@Model.BirthDate</p>
+                    <p><strong>Cv:</strong>@Model.Cv</p>
+                    <p><strong>Genero:</strong>@Model.Gender</p>
+                    <p><strong>Telefono:</strong>@Model.Phone</p>
+                    <p><strong>Direccion:</strong>@Model.Address</p>
+                    <p><strong>Fecha de nacimiento:</strong>@Model.CivilStatus</p>
+                    <p><strong>Estado Civil:</strong>@Model.Salary</p>
+                    <p><strong>Salario:</strong>@Model.About</p>
+                    <p><strong>Acerca de:</strong>@Model.AcademicTitle</p>
+                    <p><strong>Idioma:</strong>@Model.Languages</p>
+                    <p><strong>Areas:</strong>@Model.Areas</p>
+
+
+
+                  
+                </div>
+            </div>
+         
+        </div>
+    </div>
+</div>
